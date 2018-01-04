@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="well well-sm">
+    <strong>Display Categories</strong>
+    <!--<div class="btn-group">-->
+    <!--  <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">-->
+    <!--        </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span-->
+    <!--            class="glyphicon glyphicon-th"></span>Grid</a>-->
+    <!--</div>-->
+  </div>
+  <div id="categories" class="row list-group"  ng-repeat="category in model.categoryList">
+    <div class="item  col-xs-4 col-lg-4" >
+      <div class="thumbnail">
+        <img class="group list-group-image" ng-src="{{ category.image }}" alt="" />
+        <div class="caption">
+          <h4 class="group inner list-group-item-heading">
+                        {{ category.categoryname }}</h4>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

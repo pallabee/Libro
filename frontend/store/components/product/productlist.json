@@ -1,0 +1,94 @@
+[{
+	"sku": "Product1",
+	"displayname": "Blockchain Technology",
+	"description": "Hardcover",
+	"categoryids": ["6"],
+	"price": "92$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-eu.ssl-images-amazon.com/images/I/51NeyfmotEL.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},{
+	"sku": "Product2",
+	"displayname": "Silk Roads",
+	"description": "Paperback",
+	"categoryids": ["1"],
+	"price": "50$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-eu.ssl-images-amazon.com/images/I/61BRycZqEjL._SY346_.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},{
+	"sku": "Product3",
+	"displayname": "Mysterious Affair",
+	"description": "Paperback",
+	"categoryids": ["4"],
+	"price": "39$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-eu.ssl-images-amazon.com/images/I/51HtFKIv1kL.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},{
+	"sku": "Product4",
+	"displayname": "Word Power Made Easy",
+	"description": "Paperback",
+	"categoryids": ["3"],
+	"price": "50$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-na.ssl-images-amazon.com/images/I/91sJmZFOIQL.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},{
+	"sku": "Product5",
+	"displayname": "The Communist Manifesto",
+	"description": "Hardcover",
+	"categoryids": ["2"],
+	"price": "62$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-na.ssl-images-amazon.com/images/I/81%2BclR7ZmfL.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},{
+	"sku": "Product6",
+	"displayname": "TinTin",
+	"description": "Set of 6 books",
+	"categoryids": ["5"],
+	"price": "205$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-na.ssl-images-amazon.com/images/I/71ZSh00dkFL.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},
+{
+	"sku": "Product7",
+	"displayname": "Into The Wild",
+	"description": "Paperback",
+	"categoryids": ["1"],
+	"price": "35$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://cdn.waterstones.com/bookjackets/large/9780/3303/9780330351690.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},
+{
+	"sku": "Product8",
+	"displayname": "Teaching Spelling",
+	"description": "Paperback",
+	"categoryids": ["3"],
+	"price": "10$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "http://www.elgweb.net/Book%20cover%20jpeg.JPG",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+},
+{
+	"sku": "Product9",
+	"displayname": "Archie Comics",
+	"description": "Paperback",
+	"categoryids": ["5"],
+	"price": "45$",
+	"details": "Lorem ipsum dolor sit amet",
+	"image": "https://images-na.ssl-images-amazon.com/images/I/51slX7WF7dL._SX348_BO1,204,203,200_.jpg",
+	"creationdate": "1-1-2018",
+	"lastmodifieddate": "1-1-2018"
+}]
