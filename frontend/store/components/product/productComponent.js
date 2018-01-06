@@ -1,31 +1,50 @@
 (function() {
   "use strict";
-var module = angular.module('app');
+  var module = angular.module('app');
 
-  function getProductList($http){
-    return $http.get("store/components/product/productlist.json")
-                .then(function(response){
-                  return response.data;
-                });
-  }
-  function controller($http) {
-      var model = this;
-      model.productList ={};
-      model.message = 'List of Products';
-      model.$onInit = function(){
-         getProductList($http).then(function(productList){
-        model.productList= productList;
-        console.log(model.productList);
-      });
+  function controller($scope) {
+        var model = this;
+
+      model.$onInit = function() {
+        model.product = model.value;
+      }
+      model.$onChanges = function() {
+        model.product = model.value;
       }
 
+      model.showDiv = function() {
+        model.showhideflag = true;
+        model.qty = 1;
+
+      }
+      model.addItem = function(count) {
+        model.showhideflag = true;
+        model.qty = count + 1;
+
+      }
+      model.removeItem = function(count) {
+
+        model.qty = count - 1;
+        if (model.qty < 1) {
+          model.showhideflag = false;
+        } else {
+          model.showhideflag = true;
+        }
+
+      }
+
+    //  $scope.$emit("someEvent", model.qty );
 
     }
 
-  module.component('displayProducts', {
+  module.component('viewProduct', {
     templateUrl: "store/components/product/productComponent.html",
+    bindings: {
+      value: "<"
+    },
     controllerAs: "model",
-    controller: ["$http",controller]
+     controller: ['$scope',controller]
+    
   });
 
 
