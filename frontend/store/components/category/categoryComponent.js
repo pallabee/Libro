@@ -1,29 +1,37 @@
 (function() {
   "use strict";
-   var module = angular.module('app');
+  var module = angular.module('app');
 
-  function getCategoryList($http){
-    return $http.get("categorylist.json")
-                .then(function(response){
-                  return response.data;
-                });
-  }
-  function controller($http) {
-      var model = this;
-      model.categoryList ={};
-      model.message = 'List of categories';
-      model.$onInit = function(){
-         getCategoryList($http).then(function(categoryList){
-        model.categoryList= categoryList;
-        console.log(model.categoryList);
-      });
+  function controller($scope) {
+        var model = this;
+
+      model.$onInit = function() {
+        model.category = model.value;
       }
+      model.$onChanges = function() {
+        model.category = model.value;
+      }
+
+      model.getProducts = function(categoryid) {
+        console.log('catid'+categoryid);
+
+        // return $http.get('/productcatalog/products')
+        //   .then(function(response) {
+        //     return response.data;
+      }
+
+    //  $scope.$emit("someEvent", model.qty );
+
     }
 
-  module.component('displayCategories', {
-    templateUrl: "categoryComponent.html",
+  module.component('viewCategory', {
+    templateUrl: "store/components/category/categoryComponent.html",
+    bindings: {
+      value: "<"
+    },
     controllerAs: "model",
-    controller: ["$http",controller]
+     controller: ['$scope',controller]
+
   });
 
 

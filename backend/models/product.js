@@ -1,37 +1,24 @@
 'use strict';
 
 const mongoose = require('mongoose');
-
-const slugHelper = require('../helpers/slug');
-
 const Schema = mongoose.Schema;
-
-const Mixed = Schema.Types.Mixed;
 
 const ProductSchema = new Schema({
 sku: { type: String, required: true },
 displayname: { type: String, required: true },
-slug: { type: String },
+format: { type: String },
+categoryids: [
+ {type: String}
+],
+price: { type: String },
 description: { type: String },
-categoryids: { type:[
-catid: {type: String}
-]},
-price: { type: Double },
-details: { type: Mixed },
-images: { type: [
-{
-caption: { type: String },
-filename: { type: String }
-}
-] },
+image: { type: String },
 creationdate: { type: Date },
 lastmodifieddate:{ type: Date },
-//need to check the logic for activating product
-active: { type: Boolean, default: false }
 });
 
 ProductSchema.pre('save', function(next) {
-this.slug = slugHelper.createSlug(this.displayname);
+// this.slug = slugHelper.createSlug(this.displayname);
 next();
 //add error handling here
 });
@@ -39,9 +26,24 @@ next();
 ProductSchema.statics.findBySKU = function findBySKU(sku, callback) {
 this.findOne({ sku: sku }, callback);
 }
+ProductSchema.statics.findByCategory = function findByCategory(categoryid, callback) {
+this.find({ "categoryids": { "$elemMatch": { "$eq": categoryid } } }).exec(function(err,products){
+    if(!err)
+    {
+      //console.log('data'+categories)
+      callback(null,products);
 
-ProductSchema.statics.findBySlug = function findBySlug(sku, callback) {
-this.findOne({ slug: slug }, callback);
+    }
+    else
+      {
+        //console.log('ERR'+err)
+        callback(err,null);
+      }
+    });
 }
 
-module.exports = mongoose.model('Product', ProductSchema);
+// ProductSchema.statics.findBySlug = function findBySlug(sku, callback) {
+// this.findOne({ slug: slug }, callback);
+// }
+
+module.exports = mongoose.model('products', ProductSchema);

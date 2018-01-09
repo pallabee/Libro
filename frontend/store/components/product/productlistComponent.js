@@ -3,7 +3,7 @@
     var module = angular.module('app');
 
     function getProductList($http) {
-      return $http.get("store/components/product/productlist.json")
+      return $http.get('/productcatalog/products')
         .then(function(response) {
           return response.data;
         });
