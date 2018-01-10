@@ -27,7 +27,8 @@ ProductSchema.statics.findBySKU = function findBySKU(sku, callback) {
 this.findOne({ sku: sku }, callback);
 }
 ProductSchema.statics.findByCategory = function findByCategory(categoryid, callback) {
-this.find({ "categoryids": { "$elemMatch": { "$eq": categoryid } } }).exec(function(err,products){
+this.find({ "categoryids": { "$elemMatch": { "$eq": categoryid } } },{sku:1,displayname: 1,price: 1,image:1,description:1,_id:0})
+.exec(function(err,products){
     if(!err)
     {
       //console.log('data'+categories)

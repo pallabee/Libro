@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+<% include ../partials/head %>
+
+</head>
+<header>
+  <% include ../partials/header %>
+</header>
+<body>
+
 <div class="container">
   <div class="well well-sm">
     <strong>Display Products</strong>
@@ -11,14 +23,29 @@
 
   <div id="products" class="row list-group" >
 
-
+<div class="item  col-xs-4 col-lg-4" >
     <%  products.forEach(function(product){  %>
-  <!-- <view-product value="<%= product %>"></view-product> -->
-  <h4><%= product.displayname %></h4>
+  <view-product value="<%= product %>"></view-product>
+  <!-- <h4><%= product.displayname %></h4> -->
 <% }); %>
-
+  </div>
   </div>
 
-   <a class="btn btn-success" ng-click='addToCart()' href=''>Proceed to Cart</a> -->
+   <a class="btn btn-success" onclick="runMyFunction(); return false;" href=''>Proceed to Cart</a>
 
 </div>
+
+<footer>
+   <% include ../partials/footer %>
+
+</footer>
+<script>
+
+    function runMyFunction() {
+      var result = JSON.parse(localStorage.getItem("cart"));
+
+      console.log(result);
+    };
+</script>
+</body>
+</html>

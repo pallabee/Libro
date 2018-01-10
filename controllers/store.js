@@ -4,7 +4,8 @@ var ProductModel = require('../backend/models/product');
 module.exports={
       registerRoutes:function(app)
       {
-          app.get('/productcatalog/categories/:categoryid',this.products);
+          // app.get('/productcatalog/categories/:categoryid',this.products);
+          app.get('/:categoryid',this.products);
       },
       products:function(req,res,next)
       {
